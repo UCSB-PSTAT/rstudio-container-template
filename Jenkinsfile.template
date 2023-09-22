@@ -30,7 +30,7 @@ pipeline {
                     }
                     post {
                         always {
-                            sh 'podman rm -ifv $IMAGE_NAME'
+                            sh 'podman rm -ifv localhost/$IMAGE_NAME'
                         }
                     }
                 }
