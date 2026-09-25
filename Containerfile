@@ -6,5 +6,10 @@ USER root
 
 #RUN R -e "install.packages(c('<library>', '<library>'), repos = 'https://cloud.r-project.org/', Ncpus = parallel::detectCores())"
 
+#RUN mamba install -y -c conda-forge -c r\
+#    r-<package> &&\
+#    conda clean -afy &&\
+#    /usr/local/bin/fix-permissions "${CONDA_DIR}" || true
+
 USER $NB_USER
 
